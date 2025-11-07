@@ -140,6 +140,40 @@
             "type": "basic"
         },
         {
+            "conditions": [
+                {
+                    "name": "space_held",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ],
+            "description": "Space + backslash -> delete_forward",
+            "from": {
+                "key_code": "backslash",
+                "modifiers": { "optional": ["shift", "command", "option", "control"] }
+            },
+            "to": [{ "key_code": "delete_forward" }],
+            "type": "basic"
+        },
+        {
+            "description": "backslash -> delete_or_backspace",
+            "from": {
+                "key_code": "backslash",
+                "modifiers": { "optional": ["shift", "command", "option", "control"] }
+            },
+            "to": [{ "key_code": "delete_or_backspace" }],
+            "type": "basic"
+        },
+        {
+            "description": "delete_or_backspace -> backslash",
+            "from": {
+                "key_code": "delete_or_backspace",
+                "modifiers": { "optional": ["shift", "command", "option", "control"] }
+            },
+            "to": [{ "key_code": "backslash" }],
+            "type": "basic"
+        },
+        {
             "description": "Space: Set variable when held",
             "from": {
                 "key_code": "spacebar",
